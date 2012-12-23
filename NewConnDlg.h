@@ -73,7 +73,7 @@ protected:
     void AddNewRegistryData(SDialingDir *sNewDialingDir);
     void PopulateControls(SDialingDir *sDialingDir);
     void UpdateCombos(SDialingDir *sDialingDir);
-    virtual int GetHelpId() {return IDH_CONNECT;};
+    //virtual int GetHelpId() {return IDH_CONNECT;};
 
 	DECLARE_MESSAGE_MAP()
     CComboBox m_commCombo;

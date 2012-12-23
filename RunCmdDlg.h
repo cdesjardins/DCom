@@ -28,7 +28,7 @@ protected:
     void AddCommandToRegistry(CString szCommand, CString szDirectory, bool bStdin, bool bPipein, bool bUser);
     void GetCommandsFromRegistry();
     int IsInRegistry(char *szKey, char *szCommand, char *szNum);
-    virtual int GetHelpId() {return IDH_RUN_COMMAND;};
+//    virtual int GetHelpId() {return IDH_RUN_COMMAND;};
 
 	DECLARE_MESSAGE_MAP()
     CButton m_stdin;

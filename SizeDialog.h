@@ -1,6 +1,5 @@
 #pragma once
 
-#include "docs/dcomtopics.h"
 
 // CSizeDialog dialog
 
@@ -23,7 +22,7 @@ public:
 protected:
     virtual void OnOK();
     virtual char *GetSectionName() = 0;
-    virtual int GetHelpId() { return IDH_MAIN; };
+//    virtual int GetHelpId() { return IDH_MAIN; };
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
 
 	DECLARE_MESSAGE_MAP()

@@ -84,7 +84,7 @@ BOOL CSizeDialog::OnHelpInfo(HELPINFO* pHelpInfo)
 
     if (pHelpInfo->iContextType == HELPINFO_WINDOW) 
     {
-        ShowHelp(GetHelpId());
+        //ShowHelp(GetHelpId());
     }
     return TRUE;
 }

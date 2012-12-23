@@ -125,7 +125,7 @@ protected:
     virtual void OnBnClicked(int nButton);
     virtual void PopulateControls();
     void OnBnClickedCharMapButton(CEdit *pEdit);
-    virtual int GetHelpId() {return IDH_CONFIGURE;};
+//    virtual int GetHelpId() {return IDH_CONFIGURE;};
 
 	DECLARE_MESSAGE_MAP()
     CColorDialog m_colorDlg;

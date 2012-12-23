@@ -20,7 +20,7 @@ public:
     {
         return "Debug Dialog";
     };
-    virtual int GetHelpId() { return IDH_DBG_NAMED_PIPE; };
+//    virtual int GetHelpId() { return IDH_DBG_NAMED_PIPE; };
 
 // Dialog Data
 	enum { IDD = IDD_DEBUG_DIALOG };

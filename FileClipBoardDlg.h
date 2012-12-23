@@ -47,7 +47,7 @@ protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
     BOOL GetFileClipboardFilename(BOOL bOpen, CString *szFilename);
     void ReadFileClipboard(CString szFilename);
-    virtual int GetHelpId() {return IDH_FILE_CLIPBOARD;};
+//    virtual int GetHelpId() {return IDH_FILE_CLIPBOARD;};
     virtual void OnOK();
 
 	DECLARE_MESSAGE_MAP()

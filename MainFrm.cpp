@@ -636,6 +636,6 @@ void CMainFrame::OnFileOpenTerminals()
 
 void CMainFrame::OnHelpHelp()
 {
-    ShowHelp(IDH_MAIN);
+//    ShowHelp(IDH_MAIN);
 }
 
