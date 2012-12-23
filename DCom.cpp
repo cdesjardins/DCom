@@ -273,14 +273,14 @@ void CDComApp::OnAppAbout()
 
 // CDComApp message handlers
 
-#define DCOM_MAJOR 1
-#define DCOM_MINOR 9
+#define DCOM_MAJOR 0
+#define DCOM_MINOR 1
 
 BOOL CAboutDlg::OnInitDialog()
 {
     CDialog::OnInitDialog();
     char szVersion[128];
-    sprintf(szVersion, "DCom, Version %i.%i\nCopyright (c) 2010\nChris Desjardins - Delec\nBuild: %s %s", DCOM_MAJOR, DCOM_MINOR, __DATE__, __TIME__);
+    sprintf(szVersion, "DCom, Version %i.%i\nCopyright (c) 2010\nChris Desjardins\nBuild: %s %s", DCOM_MAJOR, DCOM_MINOR, __DATE__, __TIME__);
     m_versionStatic.SetWindowText(szVersion);
     return TRUE;
 }
