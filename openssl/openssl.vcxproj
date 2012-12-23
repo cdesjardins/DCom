@@ -1,0 +1,604 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{00E2D88E-0327-4C73-A5F4-83D57C409BAE}</ProjectGuid>
+    <RootNamespace>openssl</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>src\inc32;src\tmp32.dbg;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;OPENSSL_SYSNAME_WIN32;WIN32_LEAN_AND_MEAN;L_ENDIAN;DSO_WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;OPENSSL_CPUID_OBJ;OPENSSL_IA32_SSE2;AES_ASM;BN_ASM;OPENSSL_BN_ASM_PART_WORDS;OPENSSL_BN_ASM_MONT;MD5_ASM;SHA1_ASM;RMD160_ASM;OPENSSL_NO_CAMELLIA;OPENSSL_NO_SEED;OPENSSL_NO_RC5;OPENSSL_NO_MDC2;OPENSSL_NO_CMS;OPENSSL_NO_JPAKE;OPENSSL_NO_CAPIENG;OPENSSL_NO_KRB5;OPENSSL_NO_DYNAMIC_ENGINE;MK1MF_BUILD;MK1MF_PLATFORM_VC_WIN32;MONOLITH;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>src\inc32;src\tmp32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;OPENSSL_SYSNAME_WIN32;WIN32_LEAN_AND_MEAN;L_ENDIAN;DSO_WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;OPENSSL_CPUID_OBJ;OPENSSL_IA32_SSE2;AES_ASM;BN_ASM;OPENSSL_BN_ASM_PART_WORDS;OPENSSL_BN_ASM_MONT;MD5_ASM;SHA1_ASM;RMD160_ASM;OPENSSL_NO_CAMELLIA;OPENSSL_NO_SEED;OPENSSL_NO_RC5;OPENSSL_NO_MDC2;OPENSSL_NO_CMS;OPENSSL_NO_JPAKE;OPENSSL_NO_CAPIENG;OPENSSL_NO_KRB5;OPENSSL_NO_DYNAMIC_ENGINE;MK1MF_BUILD;MK1MF_PLATFORM_VC_WIN32;MONOLITH;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\crypto\asn1\a_bitstr.c" />
+    <ClCompile Include="src\crypto\asn1\a_bool.c" />
+    <ClCompile Include="src\crypto\asn1\a_bytes.c" />
+    <ClCompile Include="src\crypto\asn1\a_d2i_fp.c" />
+    <ClCompile Include="src\crypto\asn1\a_digest.c" />
+    <ClCompile Include="src\crypto\asn1\a_dup.c" />
+    <ClCompile Include="src\crypto\asn1\a_enum.c" />
+    <ClCompile Include="src\crypto\asn1\a_gentm.c" />
+    <ClCompile Include="src\crypto\asn1\a_hdr.c" />
+    <ClCompile Include="src\crypto\asn1\a_i2d_fp.c" />
+    <ClCompile Include="src\crypto\asn1\a_int.c" />
+    <ClCompile Include="src\crypto\asn1\a_mbstr.c" />
+    <ClCompile Include="src\crypto\asn1\a_meth.c" />
+    <ClCompile Include="src\crypto\asn1\a_object.c" />
+    <ClCompile Include="src\crypto\asn1\a_octet.c" />
+    <ClCompile Include="src\crypto\asn1\a_print.c" />
+    <ClCompile Include="src\crypto\asn1\a_set.c" />
+    <ClCompile Include="src\crypto\asn1\a_sign.c" />
+    <ClCompile Include="src\crypto\asn1\a_strex.c" />
+    <ClCompile Include="src\crypto\asn1\a_strnid.c" />
+    <ClCompile Include="src\crypto\asn1\a_time.c" />
+    <ClCompile Include="src\crypto\asn1\a_type.c" />
+    <ClCompile Include="src\crypto\asn1\a_utctm.c" />
+    <ClCompile Include="src\crypto\asn1\a_utf8.c" />
+    <ClCompile Include="src\crypto\asn1\a_verify.c" />
+    <ClCompile Include="src\crypto\aes\aes_cfb.c" />
+    <ClCompile Include="src\crypto\aes\aes_ctr.c" />
+    <ClCompile Include="src\crypto\aes\aes_ecb.c" />
+    <ClCompile Include="src\crypto\aes\aes_ige.c" />
+    <ClCompile Include="src\crypto\aes\aes_misc.c" />
+    <ClCompile Include="src\crypto\aes\aes_ofb.c" />
+    <ClCompile Include="src\crypto\aes\aes_wrap.c" />
+    <ClCompile Include="src\crypto\asn1\asn1_err.c" />
+    <ClCompile Include="src\crypto\asn1\asn1_gen.c" />
+    <ClCompile Include="src\crypto\asn1\asn1_lib.c" />
+    <ClCompile Include="src\crypto\asn1\asn1_par.c" />
+    <ClCompile Include="src\crypto\asn1\asn_mime.c" />
+    <ClCompile Include="src\crypto\asn1\asn_moid.c" />
+    <ClCompile Include="src\crypto\asn1\asn_pack.c" />
+    <ClCompile Include="src\crypto\bio\b_dump.c" />
+    <ClCompile Include="src\crypto\bio\b_print.c" />
+    <ClCompile Include="src\crypto\bio\b_sock.c" />
+    <ClCompile Include="src\crypto\bio\bf_buff.c" />
+    <ClCompile Include="src\crypto\bf\bf_cfb64.c" />
+    <ClCompile Include="src\crypto\bf\bf_ecb.c" />
+    <ClCompile Include="src\crypto\bio\bf_nbio.c" />
+    <ClCompile Include="src\crypto\bio\bf_null.c" />
+    <ClCompile Include="src\crypto\bf\bf_ofb64.c" />
+    <ClCompile Include="src\crypto\bf\bf_skey.c" />
+    <ClCompile Include="src\crypto\evp\bio_b64.c" />
+    <ClCompile Include="src\crypto\bio\bio_cb.c" />
+    <ClCompile Include="src\crypto\evp\bio_enc.c" />
+    <ClCompile Include="src\crypto\bio\bio_err.c" />
+    <ClCompile Include="src\crypto\bio\bio_lib.c" />
+    <ClCompile Include="src\crypto\evp\bio_md.c" />
+    <ClCompile Include="src\crypto\evp\bio_ok.c" />
+    <ClCompile Include="src\crypto\bn\bn_add.c" />
+    <ClCompile Include="src\crypto\bn\bn_blind.c" />
+    <ClCompile Include="src\crypto\bn\bn_const.c" />
+    <ClCompile Include="src\crypto\bn\bn_ctx.c" />
+    <ClCompile Include="src\crypto\bn\bn_depr.c" />
+    <ClCompile Include="src\crypto\bn\bn_div.c" />
+    <ClCompile Include="src\crypto\bn\bn_err.c" />
+    <ClCompile Include="src\crypto\bn\bn_exp.c" />
+    <ClCompile Include="src\crypto\bn\bn_exp2.c" />
+    <ClCompile Include="src\crypto\bn\bn_gcd.c" />
+    <ClCompile Include="src\crypto\bn\bn_gf2m.c" />
+    <ClCompile Include="src\crypto\bn\bn_kron.c" />
+    <ClCompile Include="src\crypto\bn\bn_lib.c" />
+    <ClCompile Include="src\crypto\bn\bn_mod.c" />
+    <ClCompile Include="src\crypto\bn\bn_mont.c" />
+    <ClCompile Include="src\crypto\bn\bn_mpi.c" />
+    <ClCompile Include="src\crypto\bn\bn_mul.c" />
+    <ClCompile Include="src\crypto\bn\bn_nist.c" />
+    <ClCompile Include="src\crypto\bn\bn_opt.c" />
+    <ClCompile Include="src\crypto\bn\bn_prime.c" />
+    <ClCompile Include="src\crypto\bn\bn_print.c" />
+    <ClCompile Include="src\crypto\bn\bn_rand.c" />
+    <ClCompile Include="src\crypto\bn\bn_recp.c" />
+    <ClCompile Include="src\crypto\bn\bn_shift.c" />
+    <ClCompile Include="src\crypto\bn\bn_sqr.c" />
+    <ClCompile Include="src\crypto\bn\bn_sqrt.c" />
+    <ClCompile Include="src\crypto\bn\bn_word.c" />
+    <ClCompile Include="src\crypto\bn\bn_x931p.c" />
+    <ClCompile Include="src\crypto\bio\bss_acpt.c" />
+    <ClCompile Include="src\crypto\bio\bss_bio.c" />
+    <ClCompile Include="src\crypto\bio\bss_conn.c" />
+    <ClCompile Include="src\crypto\bio\bss_dgram.c" />
+    <ClCompile Include="src\crypto\bio\bss_fd.c" />
+    <ClCompile Include="src\crypto\bio\bss_file.c" />
+    <ClCompile Include="src\crypto\bio\bss_log.c" />
+    <ClCompile Include="src\crypto\bio\bss_mem.c" />
+    <ClCompile Include="src\crypto\bio\bss_null.c" />
+    <ClCompile Include="src\crypto\bio\bss_sock.c" />
+    <ClCompile Include="src\crypto\buffer\buf_err.c" />
+    <ClCompile Include="src\crypto\buffer\buf_str.c" />
+    <ClCompile Include="src\crypto\buffer\buffer.c" />
+    <ClCompile Include="src\crypto\x509\by_dir.c" />
+    <ClCompile Include="src\crypto\x509\by_file.c" />
+    <ClCompile Include="src\crypto\evp\c_all.c" />
+    <ClCompile Include="src\crypto\evp\c_allc.c" />
+    <ClCompile Include="src\crypto\evp\c_alld.c" />
+    <ClCompile Include="src\crypto\cast\c_cfb64.c" />
+    <ClCompile Include="src\crypto\cast\c_ecb.c" />
+    <ClCompile Include="src\crypto\cast\c_ofb64.c" />
+    <ClCompile Include="src\crypto\comp\c_rle.c" />
+    <ClCompile Include="src\crypto\cast\c_skey.c" />
+    <ClCompile Include="src\crypto\comp\c_zlib.c" />
+    <ClCompile Include="src\crypto\des\cbc_cksm.c" />
+    <ClCompile Include="src\crypto\des\cbc_enc.c" />
+    <ClCompile Include="src\crypto\des\cfb64ede.c" />
+    <ClCompile Include="src\crypto\des\cfb64enc.c" />
+    <ClCompile Include="src\crypto\des\cfb_enc.c" />
+    <ClCompile Include="src\crypto\comp\comp_err.c" />
+    <ClCompile Include="src\crypto\comp\comp_lib.c" />
+    <ClCompile Include="src\crypto\conf\conf_api.c" />
+    <ClCompile Include="src\crypto\conf\conf_def.c" />
+    <ClCompile Include="src\crypto\conf\conf_err.c" />
+    <ClCompile Include="src\crypto\conf\conf_lib.c" />
+    <ClCompile Include="src\crypto\conf\conf_mall.c" />
+    <ClCompile Include="src\crypto\conf\conf_mod.c" />
+    <ClCompile Include="src\crypto\conf\conf_sap.c" />
+    <ClCompile Include="src\crypto\cpt_err.c" />
+    <ClCompile Include="src\crypto\cryptlib.c" />
+    <ClCompile Include="src\crypto\cversion.c" />
+    <ClCompile Include="src\crypto\asn1\d2i_pr.c" />
+    <ClCompile Include="src\crypto\asn1\d2i_pu.c" />
+    <ClCompile Include="src\crypto\des\des_lib.c" />
+    <ClCompile Include="src\crypto\des\des_old.c" />
+    <ClCompile Include="src\crypto\des\des_old2.c" />
+    <ClCompile Include="src\crypto\dh\dh_asn1.c" />
+    <ClCompile Include="src\crypto\dh\dh_check.c" />
+    <ClCompile Include="src\crypto\dh\dh_depr.c" />
+    <ClCompile Include="src\crypto\dh\dh_err.c" />
+    <ClCompile Include="src\crypto\dh\dh_gen.c" />
+    <ClCompile Include="src\crypto\dh\dh_key.c" />
+    <ClCompile Include="src\crypto\dh\dh_lib.c" />
+    <ClCompile Include="src\crypto\evp\dig_eng.c" />
+    <ClCompile Include="src\crypto\evp\digest.c" />
+    <ClCompile Include="src\crypto\dsa\dsa_asn1.c" />
+    <ClCompile Include="src\crypto\dsa\dsa_depr.c" />
+    <ClCompile Include="src\crypto\dsa\dsa_err.c" />
+    <ClCompile Include="src\crypto\dsa\dsa_gen.c" />
+    <ClCompile Include="src\crypto\dsa\dsa_key.c" />
+    <ClCompile Include="src\crypto\dsa\dsa_lib.c" />
+    <ClCompile Include="src\crypto\dsa\dsa_ossl.c" />
+    <ClCompile Include="src\crypto\dsa\dsa_sign.c" />
+    <ClCompile Include="src\crypto\dsa\dsa_utl.c" />
+    <ClCompile Include="src\crypto\dsa\dsa_vrf.c" />
+    <ClCompile Include="src\crypto\dso\dso_dl.c" />
+    <ClCompile Include="src\crypto\dso\dso_dlfcn.c" />
+    <ClCompile Include="src\crypto\dso\dso_err.c" />
+    <ClCompile Include="src\crypto\dso\dso_lib.c" />
+    <ClCompile Include="src\crypto\dso\dso_null.c" />
+    <ClCompile Include="src\crypto\dso\dso_openssl.c" />
+    <ClCompile Include="src\crypto\dso\dso_vms.c" />
+    <ClCompile Include="src\crypto\dso\dso_win32.c" />
+    <ClCompile Include="src\crypto\dyn_lck.c" />
+    <ClCompile Include="src\engines\e_4758cca.c" />
+    <ClCompile Include="src\engines\e_aep.c" />
+    <ClCompile Include="src\crypto\evp\e_aes.c" />
+    <ClCompile Include="src\engines\e_atalla.c" />
+    <ClCompile Include="src\crypto\evp\e_bf.c" />
+    <ClCompile Include="src\engines\e_capi.c" />
+    <ClCompile Include="src\crypto\evp\e_cast.c" />
+    <ClCompile Include="src\engines\e_chil.c" />
+    <ClCompile Include="src\engines\e_cswift.c" />
+    <ClCompile Include="src\crypto\evp\e_des.c" />
+    <ClCompile Include="src\crypto\evp\e_des3.c" />
+    <ClCompile Include="src\engines\e_gmp.c" />
+    <ClCompile Include="src\crypto\evp\e_idea.c" />
+    <ClCompile Include="src\crypto\evp\e_null.c" />
+    <ClCompile Include="src\engines\e_nuron.c" />
+    <ClCompile Include="src\crypto\evp\e_old.c" />
+    <ClCompile Include="src\crypto\evp\e_rc2.c" />
+    <ClCompile Include="src\crypto\evp\e_rc4.c" />
+    <ClCompile Include="src\crypto\evp\e_rc5.c" />
+    <ClCompile Include="src\engines\e_sureware.c" />
+    <ClCompile Include="src\engines\e_ubsec.c" />
+    <ClCompile Include="src\crypto\evp\e_xcbc_d.c" />
+    <ClCompile Include="src\crypto\ebcdic.c" />
+    <ClCompile Include="src\crypto\ec\ec2_mult.c" />
+    <ClCompile Include="src\crypto\ec\ec2_smpl.c" />
+    <ClCompile Include="src\crypto\ec\ec_asn1.c" />
+    <ClCompile Include="src\crypto\ec\ec_check.c" />
+    <ClCompile Include="src\crypto\ec\ec_curve.c" />
+    <ClCompile Include="src\crypto\ec\ec_cvt.c" />
+    <ClCompile Include="src\crypto\ec\ec_err.c" />
+    <ClCompile Include="src\crypto\ec\ec_key.c" />
+    <ClCompile Include="src\crypto\ec\ec_lib.c" />
+    <ClCompile Include="src\crypto\ec\ec_mult.c" />
+    <ClCompile Include="src\crypto\ec\ec_print.c" />
+    <ClCompile Include="src\crypto\des\ecb3_enc.c" />
+    <ClCompile Include="src\crypto\des\ecb_enc.c" />
+    <ClCompile Include="src\crypto\ecdh\ech_err.c" />
+    <ClCompile Include="src\crypto\ecdh\ech_key.c" />
+    <ClCompile Include="src\crypto\ecdh\ech_lib.c" />
+    <ClCompile Include="src\crypto\ecdh\ech_ossl.c" />
+    <ClCompile Include="src\crypto\ec\ecp_mont.c" />
+    <ClCompile Include="src\crypto\ec\ecp_nist.c" />
+    <ClCompile Include="src\crypto\ec\ecp_smpl.c" />
+    <ClCompile Include="src\crypto\ecdsa\ecs_asn1.c" />
+    <ClCompile Include="src\crypto\ecdsa\ecs_err.c" />
+    <ClCompile Include="src\crypto\ecdsa\ecs_lib.c" />
+    <ClCompile Include="src\crypto\ecdsa\ecs_ossl.c" />
+    <ClCompile Include="src\crypto\ecdsa\ecs_sign.c" />
+    <ClCompile Include="src\crypto\ecdsa\ecs_vrf.c" />
+    <ClCompile Include="src\crypto\des\ede_cbcm_enc.c" />
+    <ClCompile Include="src\crypto\evp\enc_min.c" />
+    <ClCompile Include="src\crypto\des\enc_read.c" />
+    <ClCompile Include="src\crypto\des\enc_writ.c" />
+    <ClCompile Include="src\crypto\evp\encode.c" />
+    <ClCompile Include="src\crypto\engine\eng_all.c" />
+    <ClCompile Include="src\crypto\engine\eng_cnf.c" />
+    <ClCompile Include="src\crypto\engine\eng_cryptodev.c" />
+    <ClCompile Include="src\crypto\engine\eng_ctrl.c" />
+    <ClCompile Include="src\crypto\engine\eng_dyn.c" />
+    <ClCompile Include="src\crypto\engine\eng_err.c" />
+    <ClCompile Include="src\crypto\engine\eng_fat.c" />
+    <ClCompile Include="src\crypto\engine\eng_init.c" />
+    <ClCompile Include="src\crypto\engine\eng_lib.c" />
+    <ClCompile Include="src\crypto\engine\eng_list.c" />
+    <ClCompile Include="src\crypto\engine\eng_openssl.c" />
+    <ClCompile Include="src\crypto\engine\eng_padlock.c" />
+    <ClCompile Include="src\crypto\engine\eng_pkey.c" />
+    <ClCompile Include="src\crypto\engine\eng_table.c" />
+    <ClCompile Include="src\crypto\err\err.c" />
+    <ClCompile Include="src\crypto\err\err_all.c" />
+    <ClCompile Include="src\crypto\err\err_bio.c" />
+    <ClCompile Include="src\crypto\err\err_def.c" />
+    <ClCompile Include="src\crypto\err\err_prn.c" />
+    <ClCompile Include="src\crypto\err\err_str.c" />
+    <ClCompile Include="src\crypto\evp\evp_acnf.c" />
+    <ClCompile Include="src\crypto\asn1\evp_asn1.c" />
+    <ClCompile Include="src\crypto\evp\evp_cnf.c" />
+    <ClCompile Include="src\crypto\evp\evp_enc.c" />
+    <ClCompile Include="src\crypto\evp\evp_err.c" />
+    <ClCompile Include="src\crypto\evp\evp_key.c" />
+    <ClCompile Include="src\crypto\evp\evp_lib.c" />
+    <ClCompile Include="src\crypto\evp\evp_pbe.c" />
+    <ClCompile Include="src\crypto\evp\evp_pkey.c" />
+    <ClCompile Include="src\crypto\ex_data.c" />
+    <ClCompile Include="src\crypto\asn1\f_enum.c" />
+    <ClCompile Include="src\crypto\asn1\f_int.c" />
+    <ClCompile Include="src\crypto\asn1\f_string.c" />
+    <ClCompile Include="src\crypto\des\fcrypt.c" />
+    <ClCompile Include="src\crypto\fips_err.c" />
+    <ClCompile Include="src\crypto\hmac\hmac.c" />
+    <ClCompile Include="src\crypto\asn1\i2d_pr.c" />
+    <ClCompile Include="src\crypto\asn1\i2d_pu.c" />
+    <ClCompile Include="src\crypto\idea\i_cbc.c" />
+    <ClCompile Include="src\crypto\idea\i_cfb64.c" />
+    <ClCompile Include="src\crypto\idea\i_ecb.c" />
+    <ClCompile Include="src\crypto\idea\i_ofb64.c" />
+    <ClCompile Include="src\crypto\idea\i_skey.c" />
+    <ClCompile Include="src\crypto\krb5\krb5_asn.c" />
+    <ClCompile Include="src\crypto\lhash\lh_stats.c" />
+    <ClCompile Include="src\crypto\lhash\lhash.c" />
+    <ClCompile Include="src\crypto\evp\m_dss.c" />
+    <ClCompile Include="src\crypto\evp\m_dss1.c" />
+    <ClCompile Include="src\crypto\evp\m_ecdsa.c" />
+    <ClCompile Include="src\crypto\evp\m_md2.c" />
+    <ClCompile Include="src\crypto\evp\m_md4.c" />
+    <ClCompile Include="src\crypto\evp\m_md5.c" />
+    <ClCompile Include="src\crypto\evp\m_null.c" />
+    <ClCompile Include="src\crypto\evp\m_ripemd.c" />
+    <ClCompile Include="src\crypto\evp\m_sha.c" />
+    <ClCompile Include="src\crypto\evp\m_sha1.c" />
+    <ClCompile Include="src\crypto\md2\md2_dgst.c" />
+    <ClCompile Include="src\crypto\md2\md2_one.c" />
+    <ClCompile Include="src\crypto\md4\md4_dgst.c" />
+    <ClCompile Include="src\crypto\md4\md4_one.c" />
+    <ClCompile Include="src\crypto\md5\md5_dgst.c" />
+    <ClCompile Include="src\crypto\md5\md5_one.c" />
+    <ClCompile Include="src\crypto\rand\md_rand.c" />
+    <ClCompile Include="src\crypto\mem.c" />
+    <ClCompile Include="src\crypto\mem_clr.c" />
+    <ClCompile Include="src\crypto\mem_dbg.c" />
+    <ClCompile Include="src\crypto\asn1\n_pkey.c" />
+    <ClCompile Include="src\crypto\evp\names.c" />
+    <ClCompile Include="src\crypto\asn1\nsseq.c" />
+    <ClCompile Include="src\crypto\o_dir.c" />
+    <ClCompile Include="src\crypto\o_init.c" />
+    <ClCompile Include="src\crypto\objects\o_names.c" />
+    <ClCompile Include="src\crypto\o_str.c" />
+    <ClCompile Include="src\crypto\o_time.c" />
+    <ClCompile Include="src\crypto\objects\obj_dat.c" />
+    <ClCompile Include="src\crypto\objects\obj_err.c" />
+    <ClCompile Include="src\crypto\objects\obj_lib.c" />
+    <ClCompile Include="src\crypto\ocsp\ocsp_asn.c" />
+    <ClCompile Include="src\crypto\ocsp\ocsp_cl.c" />
+    <ClCompile Include="src\crypto\ocsp\ocsp_err.c" />
+    <ClCompile Include="src\crypto\ocsp\ocsp_ext.c" />
+    <ClCompile Include="src\crypto\ocsp\ocsp_ht.c" />
+    <ClCompile Include="src\crypto\ocsp\ocsp_lib.c" />
+    <ClCompile Include="src\crypto\ocsp\ocsp_prn.c" />
+    <ClCompile Include="src\crypto\ocsp\ocsp_srv.c" />
+    <ClCompile Include="src\crypto\ocsp\ocsp_vfy.c" />
+    <ClCompile Include="src\crypto\des\ofb64ede.c" />
+    <ClCompile Include="src\crypto\des\ofb64enc.c" />
+    <ClCompile Include="src\crypto\des\ofb_enc.c" />
+    <ClCompile Include="src\crypto\pkcs12\p12_add.c" />
+    <ClCompile Include="src\crypto\pkcs12\p12_asn.c" />
+    <ClCompile Include="src\crypto\pkcs12\p12_attr.c" />
+    <ClCompile Include="src\crypto\pkcs12\p12_crpt.c" />
+    <ClCompile Include="src\crypto\pkcs12\p12_crt.c" />
+    <ClCompile Include="src\crypto\pkcs12\p12_decr.c" />
+    <ClCompile Include="src\crypto\pkcs12\p12_init.c" />
+    <ClCompile Include="src\crypto\pkcs12\p12_key.c" />
+    <ClCompile Include="src\crypto\pkcs12\p12_kiss.c" />
+    <ClCompile Include="src\crypto\pkcs12\p12_mutl.c" />
+    <ClCompile Include="src\crypto\pkcs12\p12_npas.c" />
+    <ClCompile Include="src\crypto\pkcs12\p12_p8d.c" />
+    <ClCompile Include="src\crypto\pkcs12\p12_p8e.c" />
+    <ClCompile Include="src\crypto\pkcs12\p12_utl.c" />
+    <ClCompile Include="src\crypto\evp\p5_crpt.c" />
+    <ClCompile Include="src\crypto\evp\p5_crpt2.c" />
+    <ClCompile Include="src\crypto\asn1\p5_pbe.c" />
+    <ClCompile Include="src\crypto\asn1\p5_pbev2.c" />
+    <ClCompile Include="src\crypto\asn1\p8_pkey.c" />
+    <ClCompile Include="src\crypto\evp\p_dec.c" />
+    <ClCompile Include="src\crypto\evp\p_lib.c" />
+    <ClCompile Include="src\crypto\evp\p_open.c" />
+    <ClCompile Include="src\crypto\evp\p_seal.c" />
+    <ClCompile Include="src\crypto\evp\p_sign.c" />
+    <ClCompile Include="src\crypto\evp\p_verify.c" />
+    <ClCompile Include="src\crypto\des\pcbc_enc.c" />
+    <ClCompile Include="src\crypto\x509v3\pcy_cache.c" />
+    <ClCompile Include="src\crypto\x509v3\pcy_data.c" />
+    <ClCompile Include="src\crypto\x509v3\pcy_lib.c" />
+    <ClCompile Include="src\crypto\x509v3\pcy_map.c" />
+    <ClCompile Include="src\crypto\x509v3\pcy_node.c" />
+    <ClCompile Include="src\crypto\x509v3\pcy_tree.c" />
+    <ClCompile Include="src\crypto\pem\pem_all.c" />
+    <ClCompile Include="src\crypto\pem\pem_err.c" />
+    <ClCompile Include="src\crypto\pem\pem_info.c" />
+    <ClCompile Include="src\crypto\pem\pem_lib.c" />
+    <ClCompile Include="src\crypto\pem\pem_oth.c" />
+    <ClCompile Include="src\crypto\pem\pem_pk8.c" />
+    <ClCompile Include="src\crypto\pem\pem_pkey.c" />
+    <ClCompile Include="src\crypto\pem\pem_seal.c" />
+    <ClCompile Include="src\crypto\pem\pem_sign.c" />
+    <ClCompile Include="src\crypto\pem\pem_x509.c" />
+    <ClCompile Include="src\crypto\pem\pem_xaux.c" />
+    <ClCompile Include="src\crypto\pkcs12\pk12err.c" />
+    <ClCompile Include="src\crypto\pkcs7\pk7_asn1.c" />
+    <ClCompile Include="src\crypto\pkcs7\pk7_attr.c" />
+    <ClCompile Include="src\crypto\pkcs7\pk7_doit.c" />
+    <ClCompile Include="src\crypto\pkcs7\pk7_lib.c" />
+    <ClCompile Include="src\crypto\pkcs7\pk7_mime.c" />
+    <ClCompile Include="src\crypto\pkcs7\pk7_smime.c" />
+    <ClCompile Include="src\crypto\pkcs7\pkcs7err.c" />
+    <ClCompile Include="src\crypto\pqueue\pqueue.c" />
+    <ClCompile Include="src\crypto\des\qud_cksm.c" />
+    <ClCompile Include="src\crypto\rand\rand_egd.c" />
+    <ClCompile Include="src\crypto\rand\rand_eng.c" />
+    <ClCompile Include="src\crypto\rand\rand_err.c" />
+    <ClCompile Include="src\crypto\des\rand_key.c" />
+    <ClCompile Include="src\crypto\rand\rand_lib.c" />
+    <ClCompile Include="src\crypto\rand\rand_nw.c" />
+    <ClCompile Include="src\crypto\rand\rand_os2.c" />
+    <ClCompile Include="src\crypto\rand\rand_unix.c" />
+    <ClCompile Include="src\crypto\rand\rand_win.c" />
+    <ClCompile Include="src\crypto\rand\randfile.c" />
+    <ClCompile Include="src\crypto\rc2\rc2_cbc.c" />
+    <ClCompile Include="src\crypto\rc2\rc2_ecb.c" />
+    <ClCompile Include="src\crypto\rc2\rc2_skey.c" />
+    <ClCompile Include="src\crypto\rc2\rc2cfb64.c" />
+    <ClCompile Include="src\crypto\rc2\rc2ofb64.c" />
+    <ClCompile Include="src\crypto\rc4\rc4_fblk.c" />
+    <ClCompile Include="src\crypto\rc4\rc4_skey.c" />
+    <ClCompile Include="src\crypto\des\read2pwd.c" />
+    <ClCompile Include="src\crypto\ripemd\rmd_dgst.c" />
+    <ClCompile Include="src\crypto\ripemd\rmd_one.c" />
+    <ClCompile Include="src\crypto\des\rpc_enc.c" />
+    <ClCompile Include="src\crypto\rsa\rsa_asn1.c" />
+    <ClCompile Include="src\crypto\rsa\rsa_chk.c" />
+    <ClCompile Include="src\crypto\rsa\rsa_depr.c" />
+    <ClCompile Include="src\crypto\rsa\rsa_eay.c" />
+    <ClCompile Include="src\crypto\rsa\rsa_eng.c" />
+    <ClCompile Include="src\crypto\rsa\rsa_err.c" />
+    <ClCompile Include="src\crypto\rsa\rsa_gen.c" />
+    <ClCompile Include="src\crypto\rsa\rsa_lib.c" />
+    <ClCompile Include="src\crypto\rsa\rsa_none.c" />
+    <ClCompile Include="src\crypto\rsa\rsa_null.c" />
+    <ClCompile Include="src\crypto\rsa\rsa_oaep.c" />
+    <ClCompile Include="src\crypto\rsa\rsa_pk1.c" />
+    <ClCompile Include="src\crypto\rsa\rsa_pss.c" />
+    <ClCompile Include="src\crypto\rsa\rsa_saos.c" />
+    <ClCompile Include="src\crypto\rsa\rsa_sign.c" />
+    <ClCompile Include="src\crypto\rsa\rsa_ssl.c" />
+    <ClCompile Include="src\crypto\rsa\rsa_x931.c" />
+    <ClCompile Include="src\crypto\rsa\rsa_x931g.c" />
+    <ClCompile Include="src\crypto\des\set_key.c" />
+    <ClCompile Include="src\crypto\sha\sha1_one.c" />
+    <ClCompile Include="src\crypto\sha\sha1dgst.c" />
+    <ClCompile Include="src\crypto\sha\sha256.c" />
+    <ClCompile Include="src\crypto\sha\sha512.c" />
+    <ClCompile Include="src\crypto\sha\sha_dgst.c" />
+    <ClCompile Include="src\crypto\sha\sha_one.c" />
+    <ClCompile Include="src\crypto\stack\stack.c" />
+    <ClCompile Include="src\crypto\des\str2key.c" />
+    <ClCompile Include="src\crypto\store\str_err.c" />
+    <ClCompile Include="src\crypto\store\str_lib.c" />
+    <ClCompile Include="src\crypto\store\str_mem.c" />
+    <ClCompile Include="src\crypto\store\str_meth.c" />
+    <ClCompile Include="src\crypto\asn1\t_bitst.c" />
+    <ClCompile Include="src\crypto\asn1\t_crl.c" />
+    <ClCompile Include="src\crypto\asn1\t_pkey.c" />
+    <ClCompile Include="src\crypto\asn1\t_req.c" />
+    <ClCompile Include="src\crypto\asn1\t_spki.c" />
+    <ClCompile Include="src\crypto\asn1\t_x509.c" />
+    <ClCompile Include="src\crypto\asn1\t_x509a.c" />
+    <ClCompile Include="src\crypto\asn1\tasn_dec.c" />
+    <ClCompile Include="src\crypto\asn1\tasn_enc.c" />
+    <ClCompile Include="src\crypto\asn1\tasn_fre.c" />
+    <ClCompile Include="src\crypto\asn1\tasn_new.c" />
+    <ClCompile Include="src\crypto\asn1\tasn_typ.c" />
+    <ClCompile Include="src\crypto\asn1\tasn_utl.c" />
+    <ClCompile Include="src\crypto\engine\tb_cipher.c" />
+    <ClCompile Include="src\crypto\engine\tb_dh.c" />
+    <ClCompile Include="src\crypto\engine\tb_digest.c" />
+    <ClCompile Include="src\crypto\engine\tb_dsa.c" />
+    <ClCompile Include="src\crypto\engine\tb_ecdh.c" />
+    <ClCompile Include="src\crypto\engine\tb_ecdsa.c" />
+    <ClCompile Include="src\crypto\engine\tb_rand.c" />
+    <ClCompile Include="src\crypto\engine\tb_rsa.c" />
+    <ClCompile Include="src\crypto\engine\tb_store.c" />
+    <ClCompile Include="src\crypto\tmdiff.c" />
+    <ClCompile Include="src\crypto\txt_db\txt_db.c" />
+    <ClCompile Include="src\crypto\ui\ui_compat.c" />
+    <ClCompile Include="src\crypto\ui\ui_err.c" />
+    <ClCompile Include="src\crypto\ui\ui_lib.c" />
+    <ClCompile Include="src\crypto\ui\ui_openssl.c" />
+    <ClCompile Include="src\crypto\ui\ui_util.c" />
+    <ClCompile Include="src\crypto\uid.c" />
+    <ClCompile Include="src\crypto\x509v3\v3_addr.c" />
+    <ClCompile Include="src\crypto\x509v3\v3_akey.c" />
+    <ClCompile Include="src\crypto\x509v3\v3_akeya.c" />
+    <ClCompile Include="src\crypto\x509v3\v3_alt.c" />
+    <ClCompile Include="src\crypto\x509v3\v3_asid.c" />
+    <ClCompile Include="src\crypto\x509v3\v3_bcons.c" />
+    <ClCompile Include="src\crypto\x509v3\v3_bitst.c" />
+    <ClCompile Include="src\crypto\x509v3\v3_conf.c" />
+    <ClCompile Include="src\crypto\x509v3\v3_cpols.c" />
+    <ClCompile Include="src\crypto\x509v3\v3_crld.c" />
+    <ClCompile Include="src\crypto\x509v3\v3_enum.c" />
+    <ClCompile Include="src\crypto\x509v3\v3_extku.c" />
+    <ClCompile Include="src\crypto\x509v3\v3_genn.c" />
+    <ClCompile Include="src\crypto\x509v3\v3_ia5.c" />
+    <ClCompile Include="src\crypto\x509v3\v3_info.c" />
+    <ClCompile Include="src\crypto\x509v3\v3_int.c" />
+    <ClCompile Include="src\crypto\x509v3\v3_lib.c" />
+    <ClCompile Include="src\crypto\x509v3\v3_ncons.c" />
+    <ClCompile Include="src\crypto\x509v3\v3_ocsp.c" />
+    <ClCompile Include="src\crypto\x509v3\v3_pci.c" />
+    <ClCompile Include="src\crypto\x509v3\v3_pcia.c" />
+    <ClCompile Include="src\crypto\x509v3\v3_pcons.c" />
+    <ClCompile Include="src\crypto\x509v3\v3_pku.c" />
+    <ClCompile Include="src\crypto\x509v3\v3_pmaps.c" />
+    <ClCompile Include="src\crypto\x509v3\v3_prn.c" />
+    <ClCompile Include="src\crypto\x509v3\v3_purp.c" />
+    <ClCompile Include="src\crypto\x509v3\v3_skey.c" />
+    <ClCompile Include="src\crypto\x509v3\v3_sxnet.c" />
+    <ClCompile Include="src\crypto\x509v3\v3_utl.c" />
+    <ClCompile Include="src\crypto\x509v3\v3err.c" />
+    <ClCompile Include="src\crypto\x509\x509_att.c" />
+    <ClCompile Include="src\crypto\x509\x509_cmp.c" />
+    <ClCompile Include="src\crypto\x509\x509_d2.c" />
+    <ClCompile Include="src\crypto\x509\x509_def.c" />
+    <ClCompile Include="src\crypto\x509\x509_err.c" />
+    <ClCompile Include="src\crypto\x509\x509_ext.c" />
+    <ClCompile Include="src\crypto\x509\x509_lu.c" />
+    <ClCompile Include="src\crypto\x509\x509_obj.c" />
+    <ClCompile Include="src\crypto\x509\x509_r2x.c" />
+    <ClCompile Include="src\crypto\x509\x509_req.c" />
+    <ClCompile Include="src\crypto\x509\x509_set.c" />
+    <ClCompile Include="src\crypto\x509\x509_trs.c" />
+    <ClCompile Include="src\crypto\x509\x509_txt.c" />
+    <ClCompile Include="src\crypto\x509\x509_v3.c" />
+    <ClCompile Include="src\crypto\x509\x509_vfy.c" />
+    <ClCompile Include="src\crypto\x509\x509_vpm.c" />
+    <ClCompile Include="src\crypto\x509\x509cset.c" />
+    <ClCompile Include="src\crypto\x509\x509name.c" />
+    <ClCompile Include="src\crypto\x509\x509rset.c" />
+    <ClCompile Include="src\crypto\x509\x509spki.c" />
+    <ClCompile Include="src\crypto\x509\x509type.c" />
+    <ClCompile Include="src\crypto\asn1\x_algor.c" />
+    <ClCompile Include="src\crypto\x509\x_all.c" />
+    <ClCompile Include="src\crypto\asn1\x_attrib.c" />
+    <ClCompile Include="src\crypto\asn1\x_bignum.c" />
+    <ClCompile Include="src\crypto\asn1\x_crl.c" />
+    <ClCompile Include="src\crypto\asn1\x_exten.c" />
+    <ClCompile Include="src\crypto\asn1\x_info.c" />
+    <ClCompile Include="src\crypto\asn1\x_long.c" />
+    <ClCompile Include="src\crypto\asn1\x_name.c" />
+    <ClCompile Include="src\crypto\asn1\x_pkey.c" />
+    <ClCompile Include="src\crypto\asn1\x_pubkey.c" />
+    <ClCompile Include="src\crypto\asn1\x_req.c" />
+    <ClCompile Include="src\crypto\asn1\x_sig.c" />
+    <ClCompile Include="src\crypto\asn1\x_spki.c" />
+    <ClCompile Include="src\crypto\asn1\x_val.c" />
+    <ClCompile Include="src\crypto\asn1\x_x509.c" />
+    <ClCompile Include="src\crypto\asn1\x_x509a.c" />
+    <ClCompile Include="src\crypto\des\xcbc_enc.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="src\crypto\aes\asm\a_win32.asm" />
+    <MASM Include="src\crypto\bf\asm\b_win32.asm" />
+    <MASM Include="src\crypto\bn\asm\bn_win32.asm" />
+    <MASM Include="src\crypto\cast\asm\c_win32.asm" />
+    <MASM Include="src\crypto\bn\asm\co_win32.asm" />
+    <MASM Include="src\crypto\cpu_win32.asm" />
+    <MASM Include="src\crypto\des\asm\d_win32.asm" />
+    <MASM Include="src\crypto\md5\asm\m5_win32.asm" />
+    <MASM Include="src\crypto\bn\asm\mt_win32.asm" />
+    <MASM Include="src\crypto\rc4\asm\r4_win32.asm" />
+    <MASM Include="src\crypto\ripemd\asm\rm_win32.asm" />
+    <MASM Include="src\crypto\sha\asm\s1_win32.asm" />
+    <MASM Include="src\crypto\sha\asm\sha512-sse2.asm" />
+    <MASM Include="src\crypto\des\asm\y_win32.asm" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
+  </ImportGroup>
+</Project>

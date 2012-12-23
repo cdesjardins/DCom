@@ -1,0 +1,850 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#ifndef APSTUDIO_INVOKED
+#include "targetver.h"
+#endif
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#ifndef APSTUDIO_INVOKED\r\n"
+    "#include ""targetver.h""\r\n"
+    "#endif\r\n"
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""res\\DCom.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#include ""afxprint.rc""       // printing/print preview resources\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\DCom.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP                  "res\\mainfram.bmp"
+IDB_TELNET              BITMAP                  "res\\telnet.bmp"
+IDB_SSH                 BITMAP                  "res\\ssh.bmp"
+IDB_DOT                 BITMAP                  "res\\dot.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR  16, 15
+BEGIN
+    BUTTON      ID_FILE_MYOPEN
+    SEPARATOR
+    BUTTON      ID_FILE_RUNCOMMAND
+    BUTTON      ID_OPEN_FILE_CLIPBOARD
+    BUTTON      ID_FILE_CAPTURE
+    BUTTON      ID_VIEW_OPTIONS
+    SEPARATOR
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+    SEPARATOR
+    BUTTON      ID_FILE_PRINT
+    BUTTON      ID_APP_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_DComTYPE MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_MYOPEN
+        MENUITEM "Open Session",                ID_FILE_OPEN_TERMINALS
+        MENUITEM "Save &Session",               ID_FILE_SAVE_TERMINALS
+        MENUITEM "&Close",                      ID_FILE_CLOSE
+        MENUITEM SEPARATOR
+        MENUITEM "&Print",                      ID_FILE_PRINT
+        MENUITEM SEPARATOR
+        MENUITEM "&Run Command",                ID_FILE_RUNCOMMAND
+        MENUITEM "&File Clipboard",             ID_OPEN_FILE_CLIPBOARD
+        MENUITEM "C&apture",                    ID_FILE_CAPTURE
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Copy",                       ID_EDIT_COPY
+        MENUITEM "&Paste\tCtrl+V",              ID_EDIT_PASTE
+        MENUITEM "Select A&ll",                 ID_EDIT_SELECT_ALL
+        MENUITEM SEPARATOR
+        MENUITEM "&Find...\tCtrl+F",            ID_EDIT_FIND
+        MENUITEM "F&ind Next\tF3",              ID_EDIT_REPEAT
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Options\tAlt+O",             ID_VIEW_OPTIONS
+        MENUITEM "&Debug",                      ID_VIEW_DEBUG
+    END
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "&Cascade",                    ID_WINDOW_CASCADE
+        MENUITEM "&Tile",                       ID_WINDOW_TILE_HORZ
+        MENUITEM "&Arrange Icons",              ID_WINDOW_ARRANGE
+        MENUITEM SEPARATOR
+        MENUITEM "Clear screen\tAlt+U",         ID_CLEAR_SCREEN
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "Help",                        ID_HELP_HELP
+        MENUITEM "&About DCom...",            ID_APP_ABOUT
+    END
+END
+
+IDR_MAINFRAME MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_MYOPEN
+        MENUITEM "Open  Session",               ID_FILE_OPEN_TERMINALS
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Options\tAlt+O",             ID_VIEW_OPTIONS
+        MENUITEM "&Debug",                      ID_VIEW_DEBUG
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "Help",                        ID_HELP_HELP
+        MENUITEM "&About DCom...",            ID_APP_ABOUT
+    END
+END
+
+IDR_SERIAL_CONTEXT MENU 
+BEGIN
+    POPUP "Context"
+    BEGIN
+        POPUP "&Baud"
+        BEGIN
+            MENUITEM "115200",                      ID_BAUD_115200
+            MENUITEM "57600",                       ID_BAUD_57600
+            MENUITEM "38400",                       ID_BAUD_38400
+            MENUITEM "19200",                       ID_BAUD_19200
+            MENUITEM "14400",                       ID_BAUD_14400
+            MENUITEM "9600",                        ID_BAUD_9600
+            MENUITEM "4800",                        ID_BAUD_4800
+            MENUITEM "2400",                        ID_BAUD_2400
+            MENUITEM "1200",                        ID_BAUD_1200
+            MENUITEM "600",                         ID_BAUD_600
+            MENUITEM "300",                         ID_BAUD_300
+            MENUITEM "110",                         ID_BAUD_110
+        END
+        POPUP "&Parity"
+        BEGIN
+            MENUITEM "&None",                       ID_PARITY_NONE
+            MENUITEM "&Odd",                        ID_PARITY_ODD
+            MENUITEM "&Even",                       ID_PARITY_EVEN
+            MENUITEM "&Mark",                       ID_PARITY_MARK
+            MENUITEM "&Space",                      ID_PARITY_SPACE
+        END
+        POPUP "B&yte Size"
+        BEGIN
+            MENUITEM "&8",                          ID_BYTESIZE_8
+            MENUITEM "&7",                          ID_BYTESIZE_7
+        END
+        POPUP "&Stop Bits"
+        BEGIN
+            MENUITEM "&1",                          ID_STOPBITS_1
+            MENUITEM "&2",                          ID_STOPBITS_2
+        END
+        MENUITEM "Set &Title",                  ID_CONTEXT_SETTITLE
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS 
+BEGIN
+    "U",            ID_CLEAR_SCREEN,        VIRTKEY, ALT, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    "F",            ID_EDIT_FIND,           VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    VK_F3,          ID_EDIT_REPEAT,         VIRTKEY, NOINVERT
+    VK_F3,          ID_EDIT_REPEAT_UP,      VIRTKEY, SHIFT, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    "O",            ID_FILE_MYOPEN,         VIRTKEY, CONTROL, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    "O",            ID_VIEW_OPTIONS,        VIRTKEY, ALT, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 170, 143
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About DCom"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_DCOM_ICON,14,14,20,20
+    LTEXT           "DCom...",IDC_VERSION_STATIC,42,8,114,41,SS_NOPREFIX
+    DEFPUSHBUTTON   "OK",IDOK,113,122,50,14,WS_GROUP
+    LTEXT           "This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (http://www.openssl.org/)\n\n\nThis product includes cryptographic software written by Eric Young (eay@cryptsoft.com)",IDC_STATIC,7,61,156,59
+END
+
+IDD_NEW_CONN_DIALOG DIALOGEX 0, 0, 169, 186
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Connect"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "SSH",IDC_SSH_RDO,"Button",BS_AUTORADIOBUTTON | WS_GROUP,13,140,31,11
+    CONTROL         "Telnet",IDC_TELNET_RDO,"Button",BS_AUTORADIOBUTTON,67,140,31,11
+    CONTROL         "Serial",IDC_SERIAL_RDO,"Button",BS_AUTORADIOBUTTON,121,140,31,11
+    CONTROL         "Debug",IDC_DEBUG_RDO,"Button",BS_AUTORADIOBUTTON,45,130,33,11
+    COMBOBOX        IDC_HOSTNAME_COMBO,13,28,100,185,CBS_DROPDOWN | CBS_OWNERDRAWFIXED | CBS_AUTOHSCROLL | CBS_SORT | CBS_HASSTRINGS | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_PORT_EDIT,120,29,38,12,ES_AUTOHSCROLL | ES_NUMBER
+    COMBOBOX        IDC_COMMPORT_COMBO,14,74,65,71,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_BAUD_COMBO,94,74,65,71,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_PARITY_COMBO,14,101,45,71,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_BYTESIZE_COMBO,64,101,45,71,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_STOPBITS_COMBO,114,101,45,71,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK",IDOK,61,165,46,14
+    PUSHBUTTON      "Cancel",IDCANCEL,116,165,46,14
+    GROUPBOX        "IP",IDC_IP_STATIC,7,7,155,41
+    GROUPBOX        "Serial",IDC_SERIAL_STATIC,7,53,155,67
+    LTEXT           "Hostname or IP Address",IDC_STATIC,13,18,85,8
+    LTEXT           "Port",IDC_STATIC,120,18,31,8
+    LTEXT           "COM Port",IDC_STATIC,14,63,41,8
+    LTEXT           "Byte Size",IDC_STATIC,64,91,41,8
+    LTEXT           "Parity",IDC_STATIC,14,91,41,8
+    LTEXT           "Stop Bits",IDC_STATIC,114,91,41,8
+    LTEXT           "Baud",IDC_STATIC,94,63,41,8
+    PUSHBUTTON      "Dialing Dir",IDC_DIALING_DIR_BUTTON,7,165,46,14
+    GROUPBOX        "Protocol",IDC_PROTOCOL_STATIC,7,126,155,32
+END
+
+IDD_COMMAND_DIALOG DIALOGEX 0, 0, 216, 102
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Run"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,104,81,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,159,81,50,14
+    LTEXT           "Command:",IDC_STATIC,7,7,202,10
+    CONTROL         "Redirect stdin",IDC_STDIN,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,67,56,10
+    CONTROL         "Block user input",IDC_USER_IN,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,73,67,61,10
+    COMBOBOX        IDC_COMMAND_COMBO,7,20,147,126,CBS_DROPDOWN | CBS_AUTOHSCROLL | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "Browse",ID_RUN_BROWSE_CMD,159,20,50,14
+    COMBOBOX        IDC_WORKING_DIR_COMBO,7,49,147,126,CBS_DROPDOWN | CBS_AUTOHSCROLL | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "Browse",ID_RUN_BROWSE_WD,159,49,50,14
+    LTEXT           "Working directory:",IDC_STATIC,7,38,202,10
+    CONTROL         "Redirect named pipe in",IDC_PIPEIN,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,79,86,10
+END
+
+IDD_FILE_CLIPBOARD_DIALOG DIALOGEX 0, 0, 141, 215
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "File Clipboard"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,194,61,14
+    DEFPUSHBUTTON   "Open",ID_FILE_CLIPBOARD_OPEN,7,175,61,14
+    DEFPUSHBUTTON   "Save",ID_FILE_CLIPBOARD_SAVE,73,175,61,14
+    CONTROL         "",IDC_FILE_CLIPBOARD_LIST,"SysListView32",LVS_LIST | LVS_SHOWSELALWAYS | LVS_EDITLABELS | LVS_ALIGNLEFT | LVS_NOCOLUMNHEADER | WS_BORDER | WS_TABSTOP,7,7,127,145
+    DEFPUSHBUTTON   "Remove Selected",ID_FILE_CLIPBOARD_REMOVE,7,156,61,14
+    CONTROL         "Send newline",IDC_FILE_CLIPBOARD_NEWLINE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,74,196,57,10
+    DEFPUSHBUTTON   "Send",ID_FILE_CLIPBOARD_SEND,73,156,61,14
+END
+
+IDD_CONFIG_DIALOG DIALOGEX 0, 0, 342, 181
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Configure"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,228,153,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,282,153,50,14
+    CONTROL         "",IDC_SAMPLE_TEXT,"RichEdit20A",ES_AUTOHSCROLL | ES_READONLY | WS_TABSTOP,59,138,70,30
+    EDITTEXT        IDC_SCROLLBACK_SIZE,149,110,84,12,ES_AUTOHSCROLL | ES_NUMBER
+    GROUPBOX        "Font Configuration",IDC_FONT_STATIC,7,89,129,84
+    GROUPBOX        "Window",IDC_WINDOW_STATIC,141,89,194,39
+    LTEXT           "Scrollback Lines",IDC_SCROLLBACK_STATIC,150,101,66,9
+    LTEXT           "Foreground",IDC_FOREGROUND,13,100,116,16
+    LTEXT           "Background",IDC_BACKGROUND,13,120,116,16
+    PUSHBUTTON      "F1",IDC_F1,13,20,23,18
+    PUSHBUTTON      "F2",IDC_F2,39,20,23,18
+    PUSHBUTTON      "F3",IDC_F3,65,20,23,18
+    PUSHBUTTON      "F4",IDC_F4,91,20,23,18
+    GROUPBOX        "Keyboard",IDC_STATIC,7,7,328,82
+    PUSHBUTTON      "F5",IDC_F5,120,20,23,18
+    PUSHBUTTON      "F6",IDC_F6,146,20,23,18
+    PUSHBUTTON      "F7",IDC_F7,172,20,23,18
+    PUSHBUTTON      "F8",IDC_F8,198,20,23,18
+    PUSHBUTTON      "F9",IDC_F9,228,20,23,18
+    PUSHBUTTON      "F10",IDC_F10,254,20,23,18
+    PUSHBUTTON      "F11",IDC_F11,280,20,23,18
+    PUSHBUTTON      "F12",IDC_F12,306,20,23,18
+    PUSHBUTTON      "Home",IDC_KEY_HOME,280,43,23,18
+    PUSHBUTTON      "Insert",IDC_KEY_INSERT,254,43,23,18
+    PUSHBUTTON      "PgUp",IDC_KEY_PGUP,306,43,23,18
+    PUSHBUTTON      "End",IDC_KEY_END,280,66,23,18
+    PUSHBUTTON      "Delete",IDC_KEY_DELETE,254,66,23,18
+    PUSHBUTTON      "PgDn",IDC_KEY_PGDN,306,66,23,18
+    PUSHBUTTON      "Down",IDC_KEY_DOWN,197,66,23,18
+    PUSHBUTTON      "Left",IDC_KEY_LEFT,171,66,23,18
+    PUSHBUTTON      "Right",IDC_KEY_RIGHT,223,66,23,18
+    PUSHBUTTON      "Up",IDC_KEY_UP,197,43,23,18
+    PUSHBUTTON      "Backspace",IDC_KEY_BACKSPACE,144,43,50,18
+    LTEXT           "Key",IDC_SELECTION,93,71,35,8
+    PUSHBUTTON      "Default Keys",IDC_DEFAULTS,90,43,50,18
+    GROUPBOX        "Emulation",IDC_STATIC,141,128,78,45
+    CONTROL         "Emulation",IDC_EMM_RDO,"Button",BS_AUTORADIOBUTTON,147,139,60,9
+    CONTROL         "Strip Esc",IDC_SKIP_RDO,"Button",BS_AUTORADIOBUTTON,147,150,60,9
+    CONTROL         "Pass Esc",IDC_PASS_RDO,"Button",BS_AUTORADIOBUTTON,147,160,60,9
+    EDITTEXT        IDC_NORMAL_EDIT,46,42,36,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Normal",IDC_NORMAL_BUTTON,14,42,29,12
+    EDITTEXT        IDC_CTRL_EDIT,46,57,36,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Ctrl",IDC_CTRL_BUTTON,14,57,29,12
+    EDITTEXT        IDC_SHIFT_EDIT,46,72,36,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Shift",IDC_SHIFT_BUTTON,14,72,29,12
+    COMBOBOX        IDC_WIN_WIDTH,249,110,71,66,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Window Width",IDC_SCROLLBACK_STATIC2,249,101,48,9
+    COMBOBOX        IDC_FONT_SIZE,13,155,41,66,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Font Size",IDC_BACKGROUND2,13,146,41,8
+END
+
+IDD_DIALING_DIR_DIALOG DIALOGEX 0, 0, 221, 145
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Dialing Dir"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,79,124,64,14
+    PUSHBUTTON      "Cancel",IDCANCEL,150,124,64,14
+    CONTROL         "",IDC_DIALING_DIR_TREE,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | TVS_SHOWSELALWAYS | WS_BORDER | WS_HSCROLL | WS_TABSTOP,7,7,207,114
+    DEFPUSHBUTTON   "Open Dialing Dir",ID_OPEN_DIALING_DIR,7,124,64,14
+END
+
+IDD_SIZEDIALOG DIALOG  0, 0, 320, 200
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,209,179,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,263,179,50,14
+END
+
+IDD_CHARMAP_DIALOG DIALOGEX 0, 0, 170, 185
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_TOPMOST
+CAPTION "Char Map"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,58,164,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,112,164,50,14
+    CONTROL         "",IDC_CHARMAP_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,7,156,150
+END
+
+IDD_DEBUG_DIALOG DIALOGEX 0, 0, 316, 185
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Debug"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,259,164,50,14
+    DEFPUSHBUTTON   "Pause",ID_DEBUG_PAUSE,205,164,50,14
+    CONTROL         "",IDC_DEBUG_EDIT,"RichEdit20A",ES_MULTILINE | ES_AUTOHSCROLL | ES_READONLY | ES_WANTRETURN | WS_BORDER | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP,7,7,302,151
+    DEFPUSHBUTTON   "Clear",ID_DEBUG_CLEAR,149,164,50,14
+END
+
+IDD_TITLE_DIALOG DIALOGEX 0, 0, 184, 47
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Set Title"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_TITLE_EDIT,7,7,170,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,73,26,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,127,26,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "CompanyName", "Delec"
+            VALUE "FileDescription", "DCom Terminal Emulator Chris Desjardins"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "DCom.exe"
+            VALUE "LegalCopyright", "2009: (c) Delec.  All rights reserved."
+            VALUE "OriginalFilename", "DCom.exe"
+            VALUE "ProductName", "DCom"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 163
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 136
+    END
+
+    IDD_NEW_CONN_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 162
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 179
+    END
+
+    IDD_COMMAND_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 209
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 95
+    END
+
+    IDD_FILE_CLIPBOARD_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 134
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 208
+    END
+
+    IDD_CONFIG_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 335
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 174
+    END
+
+    IDD_DIALING_DIR_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 214
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 138
+    END
+
+    IDD_SIZEDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 313
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 193
+    END
+
+    IDD_CHARMAP_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 163
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 178
+    END
+
+    IDD_DEBUG_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 309
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 178
+    END
+
+    IDD_TITLE_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 177
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 40
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_NEW_CONN_DIALOG DLGINIT
+BEGIN
+    IDC_BAUD_COMBO, 0x403, 7, 0
+0x3131, 0x3235, 0x3030, "\000" 
+    IDC_BAUD_COMBO, 0x403, 6, 0
+0x3735, 0x3036, 0x0030, 
+    IDC_BAUD_COMBO, 0x403, 6, 0
+0x3833, 0x3034, 0x0030, 
+    IDC_BAUD_COMBO, 0x403, 6, 0
+0x3931, 0x3032, 0x0030, 
+    IDC_BAUD_COMBO, 0x403, 6, 0
+0x3431, 0x3034, 0x0030, 
+    IDC_BAUD_COMBO, 0x403, 5, 0
+0x3639, 0x3030, "\000" 
+    IDC_BAUD_COMBO, 0x403, 5, 0
+0x3834, 0x3030, "\000" 
+    IDC_BAUD_COMBO, 0x403, 5, 0
+0x3432, 0x3030, "\000" 
+    IDC_BAUD_COMBO, 0x403, 5, 0
+0x3231, 0x3030, "\000" 
+    IDC_BAUD_COMBO, 0x403, 4, 0
+0x3036, 0x0030, 
+    IDC_BAUD_COMBO, 0x403, 4, 0
+0x3033, 0x0030, 
+    IDC_BAUD_COMBO, 0x403, 4, 0
+0x3131, 0x0030, 
+    IDC_PARITY_COMBO, 0x403, 3, 0
+0x6f4e, "\000" 
+    IDC_PARITY_COMBO, 0x403, 4, 0
+0x644f, 0x0064, 
+    IDC_PARITY_COMBO, 0x403, 5, 0
+0x7645, 0x6e65, "\000" 
+    IDC_PARITY_COMBO, 0x403, 5, 0
+0x614d, 0x6b72, "\000" 
+    IDC_PARITY_COMBO, 0x403, 6, 0
+0x7053, 0x6361, 0x0065, 
+    IDC_BYTESIZE_COMBO, 0x403, 2, 0
+0x0038, 
+    IDC_BYTESIZE_COMBO, 0x403, 2, 0
+0x0037, 
+    IDC_STOPBITS_COMBO, 0x403, 2, 0
+0x0031, 
+    IDC_STOPBITS_COMBO, 0x403, 2, 0
+0x0032, 
+    0
+END
+
+IDD_CONFIG_DIALOG DLGINIT
+BEGIN
+    IDC_FONT_SIZE, 0x403, 2, 0
+0x0036, 
+    IDC_FONT_SIZE, 0x403, 2, 0
+0x0037, 
+    IDC_FONT_SIZE, 0x403, 2, 0
+0x0038, 
+    IDC_FONT_SIZE, 0x403, 2, 0
+0x0039, 
+    IDC_FONT_SIZE, 0x403, 3, 0
+0x3031, "\000" 
+    IDC_FONT_SIZE, 0x403, 3, 0
+0x3131, "\000" 
+    IDC_FONT_SIZE, 0x403, 3, 0
+0x3231, "\000" 
+    IDC_FONT_SIZE, 0x403, 3, 0
+0x3331, "\000" 
+    IDC_FONT_SIZE, 0x403, 3, 0
+0x3431, "\000" 
+    IDC_FONT_SIZE, 0x403, 3, 0
+0x3531, "\000" 
+    IDC_FONT_SIZE, 0x403, 3, 0
+0x3631, "\000" 
+    IDC_FONT_SIZE, 0x403, 3, 0
+0x3731, "\000" 
+    IDC_FONT_SIZE, 0x403, 3, 0
+0x3831, "\000" 
+    IDC_FONT_SIZE, 0x403, 3, 0
+0x3931, "\000" 
+    IDC_FONT_SIZE, 0x403, 3, 0
+0x3032, "\000" 
+    IDC_FONT_SIZE, 0x403, 3, 0
+0x3132, "\000" 
+    IDC_FONT_SIZE, 0x403, 3, 0
+0x3232, "\000" 
+    IDC_FONT_SIZE, 0x403, 3, 0
+0x3332, "\000" 
+    IDC_FONT_SIZE, 0x403, 3, 0
+0x3432, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDP_OLE_INIT_FAILED     "OLE initialization failed.  Make sure that the OLE libraries are the correct version."
+    IDP_SOCKETS_INIT_FAILED "Windows sockets initialization failed."
+END
+
+STRINGTABLE 
+BEGIN
+    IDR_MAINFRAME           "DCom"
+    IDR_DComTYPE          "\nDCom\nDCom\n\n\nDCom.Document\nDCom.Document"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "DCom"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+    ID_INDICATOR_TX         "Tx 0000000000"
+    ID_INDICATOR_RX         "Rx 0000000000"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+    ID_FILE_PAGE_SETUP      "Change the printing options\nPage Setup"
+    ID_FILE_PRINT_SETUP     "Change the printer and printing options\nPrint Setup"
+    ID_FILE_PRINT           "Print the active document\nPrint"
+    ID_FILE_PRINT_PREVIEW   "Display full pages\nPrint Preview"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_WINDOW_NEW           "Open another window for the active document\nNew Window"
+    ID_WINDOW_ARRANGE       "Arrange icons at the bottom of the window\nArrange Icons"
+    ID_WINDOW_CASCADE       "Arrange windows so they overlap\nCascade Windows"
+    ID_WINDOW_TILE_HORZ     "Arrange windows as non-overlapping tiles\nTile Windows"
+    ID_WINDOW_TILE_VERT     "Arrange windows as non-overlapping tiles\nTile Windows"
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+    AFX_IDS_MDICHILD        "Activate this window"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "Close print preview mode\nCancel Preview"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_MYOPEN          "Open a new connection"
+    ID_CLEAR_SCREEN         "Clear all text in the active window"
+    ID_OPEN_FILE_CLIPBOARD  "Open the file clipboard"
+    ID_FILE_RUNCOMMAND      "Run a command and redirect I/O to the far terminal"
+    ID_CAPTURE              "Capture all output to a file"
+    ID_FILE_CAPTURE         "Capture output to a file"
+    ID_VIEW_FONT            "Change the window font."
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_OPTIONS         "Configure DCom"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_KEYBOARDEDITOR  "Open the keyboard editor dialog"
+    ID_FILE_TRANSFER        "Send files to the remote end"
+    ID_FILE_SAVE_TERMINALS  "Save all connections to a file, to reopen later."
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_OPEN_TERMINALS  "Open a saved terminal file."
+    ID_HELP_HELP            "Open DCom Documentation."
+    ID_VIEW_DEBUG           "View the debug window"
+    ID_CONTEXT_SETTITLE     "Set the window title"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#include "res\DCom.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#include "afxprint.rc"       // printing/print preview resources
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
